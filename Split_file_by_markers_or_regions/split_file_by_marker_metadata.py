@@ -2,8 +2,8 @@ import struct
 from reapy_boost import reascript_api as RPR
 import re
 
-# This script reads the marker embedded in the wav file and splits them.
-# Select the file you wish to process and run it from a terminal or command prompt.
+# This script reads the markers embedded in the wav file and splits them.
+# Select the file you wish to process and run it from Actions List or terminal / command prompt.
 # Running it from outside Reaper is slower than running it from inside Reaper.
 
 
