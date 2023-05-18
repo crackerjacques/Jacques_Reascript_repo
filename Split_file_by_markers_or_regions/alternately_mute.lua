@@ -1,5 +1,5 @@
 
---- run and choise 0 or 1 and go.
+--- run and choice 0 or 1 and go.
 
 local retval, start_mute = reaper.GetUserInputs("Start from", 1, " (0 or 1 means : here or next  )", "")
 if retval == false then
