@@ -3,7 +3,7 @@ from reapy_boost import reascript_api as RPR
 import re
 
 # This script reads the regions embedded in the wav file and splits them.
-# Select the file you wish to process and run it from a terminal or command prompt.
+# Select the file you wish to process and run it from Actions List or terminal / command prompt.
 # Running it from outside Reaper is slower than running it from inside Reaper.
 
 
@@ -13,12 +13,12 @@ def read_chunks(file):
 
     while True:
         chunk_id = file.read(4)
-        if not chunk_id:  # EOF
+        if not chunk_id:  
             break
 
         try:
             chunk_size, = struct.unpack('<I', file.read(4))
-        except struct.error:  # Less than 4 bytes available
+        except struct.error:
             break
 
         chunk_data = file.read(chunk_size)
@@ -119,7 +119,7 @@ item_start_position = RPR.GetMediaItemInfo_Value(selected_item, "D_POSITION")
 def get_sample_rate_from_path(file_path):
     match = re.search(r'(\d+\.?\d*) kHz', file_path)
     if match:
-        sample_rate_str = match.group(1).replace('.', '') + '000'  # convert '44.1' to '44100', etc.
+        sample_rate_str = match.group(1).replace('.', '') + '000' 
         return int(sample_rate_str)
 
 def samples_to_time(samples, sample_rate):
